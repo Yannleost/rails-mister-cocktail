@@ -1,8 +1,19 @@
-<h1> <%= @cocktail.name %> composition : </h1>
-<% @cocktail.doses.each do |dose| %>
-<%= dose.description %>
-<% end %>
+
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://www.feteanniversaire.fr/public/cms/130515065232.jpg');">
+  <div class="card-category"></div>
+  <div class="card-description">
+    <h1> <%= @cocktail.name %> composition : </h1>
+    <% @cocktail.doses.each do |dose| %>
+    <li> <%= dose.description %> <%=dose.ingredient.name%> </li>
+    <% end %>
+
+
+  </div>
+
+  <a class="card-link" href="#" ></a>
+</div>
 
 <%= link_to "Add Dose", new_cocktail_dose_path(params[:id]) %> <br />
 
-<%= link_to "Back to cocktail", cocktails_path %>
+    <%= link_to "Back to cocktail", cocktails_path %>
+
